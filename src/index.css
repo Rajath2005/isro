@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "IBM Plex Sans", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-orbitron: "Orbitron", sans-serif;
+
+  --color-background: #08131E;
+  --color-surface: #111C28;
+  --color-surface-dim: #101419;
+  --color-surface-bright: #363940;
+  --color-surface-container: #1c2026;
+  --color-surface-container-low: #181c22;
+  --color-surface-container-high: #262a30;
+  --color-surface-container-highest: #31353b;
+  --color-on-surface: #e0e2ea;
+  --color-on-surface-variant: #c0c7d4;
+  --color-outline: #8a919e;
+  --color-outline-variant: #404752;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-surface);
+    font-family: var(--font-sans);
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0e14;
+}
+::-webkit-scrollbar-thumb {
+  background: #262a30;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #31353b;
+}
+
+/* Blueprint grid overlay background */
+.blueprint-grid {
+  background-image: 
+    linear-gradient(to right, rgba(51, 148, 241, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(51, 148, 241, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Scanning scanline animation */
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.scanline-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanline-effect::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to bottom, transparent, rgba(162, 201, 255, 0.3), transparent);
+  animation: scanline 6s linear infinite;
+  pointer-events: none;
+}
+

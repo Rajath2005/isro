@@ -1,0 +1,6 @@
+{
+  "name": "AI Lunar Mission Planner",
+  "description": "Aerospace mission control and planner for lunar south pole exploration, landing site selection, ice detection, and optimized rover routing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

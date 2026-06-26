@@ -414,9 +414,9 @@ export default function RoverPlannerView({
       </div>
 
       {/* Right Visual Control Stage */}
-      <div className="flex-1 flex flex-col gap-4 overflow-hidden h-full">
+      <div className="flex-1 flex flex-col gap-4 overflow-y-auto pr-1 h-full">
         {/* Map Viewport Container */}
-        <div className="flex-1 relative min-h-[220px] rounded-lg border border-[#404752] overflow-hidden">
+        <div className="flex-1 relative min-h-[220px] xl:min-h-[350px] shrink-0 rounded-lg border border-[#404752] overflow-hidden">
           <MapViewer
             selectedSiteId={selectedSite.id}
             onSelectSite={onSelectSite}
@@ -431,7 +431,7 @@ export default function RoverPlannerView({
         </div>
 
         {/* Dynamic Route Altimetry Profile Cross-Section */}
-        <div className="h-44 shrink-0 rounded-lg border border-[#404752] bg-[#111C28] p-4 flex flex-col justify-between shadow-lg">
+        <div className="min-h-[176px] xl:h-44 shrink-0 rounded-lg border border-[#404752] bg-[#111C28] p-4 flex flex-col justify-between shadow-lg">
           <div className="flex justify-between items-center mb-1">
             <span className="font-display font-bold text-[10px] text-[#c0c7d4] uppercase tracking-wider flex items-center gap-1.5">
               <BarChart2 className="h-4 w-4 text-[#3394f1]" />

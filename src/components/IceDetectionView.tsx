@@ -174,9 +174,9 @@ export default function IceDetectionView({
       </div>
 
       {/* Center Spectroscopy visualizer bars and Map */}
-      <div className="flex-1 flex flex-col gap-4 overflow-hidden h-full">
+      <div className="flex-1 flex flex-col gap-4 overflow-y-auto pr-1 h-full">
         {/* Spectrograph panel */}
-        <div className="h-44 rounded-lg border border-[#404752] bg-[#111C28] p-4 flex flex-col shrink-0 shadow-lg">
+        <div className="min-h-[176px] xl:h-44 rounded-lg border border-[#404752] bg-[#111C28] p-4 flex flex-col shrink-0 shadow-lg">
           <span className="font-display font-bold text-[10px] text-[#c0c7d4] uppercase tracking-wider block mb-2">
             NEUTRON ATTENUATION SPECTROGRAPHIC FLUX
           </span>
@@ -232,7 +232,7 @@ export default function IceDetectionView({
         </div>
 
         {/* Interactive Map */}
-        <div className="flex-1 relative min-h-[220px]">
+        <div className="flex-1 relative min-h-[220px] xl:min-h-[350px] shrink-0">
           <MapViewer
             selectedSiteId={selectedSite.id}
             onSelectSite={onSelectSite}

@@ -115,11 +115,11 @@ export default function OverviewDashboard({
   const statusColor = selectedSite.status === 'optimal' ? '#4CAF50' : selectedSite.status === 'feasible' ? '#3394f1' : '#EF5350';
 
   return (
-    <div className="flex-1 flex gap-5 h-full overflow-hidden select-none">
+    <div className="flex-1 flex flex-col md:flex-row gap-5 h-full overflow-hidden select-none">
       {/* Central Interactive Block */}
-      <div className="flex-1 flex flex-col gap-4 min-w-0 h-full">
+      <div className="flex-1 flex flex-col gap-4 min-w-0 h-full overflow-y-auto pr-1">
         {/* Map Viewport Container */}
-        <div className="flex-[3] relative min-h-[300px]">
+        <div className="flex-1 min-h-[320px] xl:min-h-[400px] shrink-0 relative">
           <MapViewer
             selectedSiteId={selectedSite.id}
             onSelectSite={onSelectSite}
@@ -134,7 +134,7 @@ export default function OverviewDashboard({
         </div>
 
         {/* Bottom Section: Elevation Chart & Metrics */}
-        <div className="h-44 shrink-0 grid grid-cols-1 xl:grid-cols-2 gap-4">
+        <div className="min-h-[180px] xl:h-44 shrink-0 grid grid-cols-1 xl:grid-cols-2 gap-4">
           {/* Elevation Profile Plot */}
           <div className="rounded-lg border border-[#404752] bg-[#111C28] p-4 flex flex-col justify-between shadow-lg">
             <div className="flex justify-between items-center mb-1">

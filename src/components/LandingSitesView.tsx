@@ -183,9 +183,9 @@ export default function LandingSitesView({
       </div>
 
       {/* Right Map Viewport Column & AI Recommendation banner */}
-      <div className="flex-1 flex flex-col gap-4 overflow-hidden h-full">
+      <div className="flex-1 flex flex-col gap-4 overflow-y-auto pr-1 h-full">
         {/* Map */}
-        <div className="flex-1 relative min-h-[220px]">
+        <div className="flex-1 relative min-h-[220px] xl:min-h-[350px] shrink-0">
           <MapViewer
             selectedSiteId={selectedSite.id}
             onSelectSite={onSelectSite}
